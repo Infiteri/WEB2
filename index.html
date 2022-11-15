@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(17, 17, 17);
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(0, 0, 0);
+      }
+
+      body {
+        background: #070707;
+        margin: 0;
+      }
+
+      .topbarLetter {
+        color: rgb(255, 0, 89);
+      }
+
+      .name:hover {
+        color: rgb(255, 0, 89);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background-color: #000;
+      }
+
+      .name {
+        user-select: none;
+        transition: all 0.5s;
+        position: absolute;
+      }
+
+      .name:hover {
+        font-size: 50px;
+      }
+
+      .left {
+        display: flex;
+        margin-left: 850px;
+        align-items: center;
+      }
+
+      .left h2 {
+        font-size: 25px;
+        margin-left: 25px;
+      }
+
+      .left h2 a {
+        transition: ease-in-out 0.5s;
+        text-decoration: none;
+        margin-top: 5px;
+      }
+
+      .left h2 a:hover {
+        /* position: relative;
+        color: #ff8000;*/
+        font-size: 30px;
+        background: -webkit-linear-gradient(#f17211, #f5af19);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      #what {
+        margin: 75px;
+        padding: 15px;
+        width: 350px;
+        background-color: rgba(0, 0, 0, 0.2);
+        user-select: none;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+
+      #what:hover {
+        width: 350px;
+        scale: 1.2;
+        background-color: #000;
+      }
+
+      #what:hover h1 {
+        background: -webkit-linear-gradient(#f17211, #f5af19);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      #why {
+        margin: 75px;
+        padding: 15px;
+        width: 450px;
+        margin-top: 150px;
+        background-color: rgba(0, 0, 0, 0.2);
+        user-select: none;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+
+      #pros {
+        margin: 75px;
+        padding: 15px;
+        width: 450px;
+        margin-top: 150px;
+        background-color: rgba(0, 0, 0, 0.2);
+        user-select: none;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+
+      #pros h1 {
+        color: rgb(170, 255, 0);
+      }
+
+      #cons {
+        margin: 75px;
+        padding: 15px;
+        width: 450px;
+        margin-top: 150px;
+        background-color: rgba(0, 0, 0, 0.2);
+        user-select: none;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+
+      #cons h1 {
+        color: rgb(255, 0, 0);
+      }
+
+      #why:hover {
+        width: 475px;
+        scale: 1.2;
+        background-color: #000;
+      }
+
+      #why:hover h1 {
+        background: -webkit-linear-gradient(#f17211, #f5af19);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .pc {
+        display: flex;
+        position: absolute;
+        bottom: -900px;
+      }
+
+      .design1 {
+        position: absolute;
+        left: 850px;
+        top: 150px;
+        transition: all 0.3s;
+      }
+
+      .design1:hover {
+        transform: scale(1.1);
+      }
+
+      .divImg {
+        position: absolute;
+        top: 325px;
+        right: 45px;
+      }
+
+      .secretImg {
+        transition: all 0.3s;
+      }
+
+      .secretImg:hover {
+        scale: 0.8;
+      }
+
+      .design2 {
+        position: relative;
+        margin-left: -50px;
+        scale: 0.6;
+      }
+
+      .design3 {
+        position: relative;
+        margin-left: -50px;
+        scale: 0.6;
+      }
+
+      .design4 {
+        position: relative;
+        margin-left: -50px;
+        scale: 0.6;
+      }
+
+      .when {
+        margin: 75px;
+        margin-left: 900px;
+        padding: 15px;
+        width: 350px;
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: all 0.5s;
+        user-select: none;
+      }
+
+      .when:hover {
+        width: 350px;
+        scale: 1.2;
+        margin-right: 250px;
+        background-color: #000;
+      }
+
+      .when:hover h1 {
+        background: -webkit-linear-gradient(#f17211, #f5af19);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .old {
+        position: absolute;
+        bottom: 5px;
+        scale: 0.8;
+      }
+
+      .old img {
+        scale: 0.8;
+        margin-top: 25px;
+        margin: 15px;
+        transition: all 0.3s;
+      }
+
+      .oldMain {
+        position: absolute;
+        bottom: -175px;
+        scale: 1.2;
+        transition: all 0.3s;
+        left: 300px;
+      }
+
+      .old img:hover {
+        transform: scale(1.4);
+      }
+
+      .oldMain:hover {
+        transform: scale(1.1);
+      }
+
+      .cool {
+        background: #000;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      #art {
+        width: 650px;
+        margin-right: 100px;
+        position: absolute;
+        right: 0;
+        bottom: -550px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cool"></div>
+
+    <div class="topbar">
+      <h1 class="name">
+        <span class="topbarLetter">W</span><span class="letter">e</span
+        ><span class="letter">b</span> <span class="topbarLetter">D</span
+        ><span class="letter">e</span><span class="letter">s</span
+        ><span class="letter">i</span><span class="letter">g</span
+        ><span class="letter">n</span>
+      </h1>
+
+      <div class="left">
+        <h2>
+          <a href="#what"> What </a>
+        </h2>
+        <h2><a href="#whenMain"> When </a></h2>
+        <h2><a href="#why"> Why </a></h2>
+        <h2><a href="#pros"> Pros </a></h2>
+        <h2><a href="#cons"> Cons </a></h2>
+      </div>
+    </div>
+
+    <div id="what">
+      <h1>What is Web Design:</h1>
+      <div class="whatdef">
+        <p class="content">
+          Web design is the art of planning and arranging content on a website
+          so that it can be shared and accessed online with the world. A
+          combination of aesthetic and functional elements, web design is what
+          determines the look of a website — such as its colors, fonts, and
+          graphics — as well as shaping the site’s structure and the users’
+          experience of it.
+        </p>
+      </div>
+    </div>
+
+    <img src="design101.jfif" class="design1" />
+
+    <div class="divImg">
+      <img src="design2.jfif" class="design2 secretImg" />
+      <img src="design3.jfif" class="design3 secretImg" />
+      <img src="design4.jfif" class="design4 secretImg" />
+    </div>
+
+    <img src="oldMain.jfif" class="oldMain" />
+    <div class="old">
+      <img src="old1.png" />
+      <img src="old2.jfif" />
+      <img src="old3.jfif" />
+    </div>
+
+    <div class="when">
+      <h1 id="whenMain">When did it start:</h1>
+      <p>
+        Web design has come a long way since the first site was published in
+        1991. With over one billion live websites on the internet today, it’s no
+        surprise that this industry is here to stay. Wix is home to thousands of
+        website design professionals, enthusiasts, and designers who are
+        empowering the industry to reach new heights. So, if you’re here to
+        learn more about the world of web design, you’ve come to the right
+        place.
+      </p>
+    </div>
+
+    <div id="why">
+      <h1>Why do I like Web Design:</h1>
+      <div class="whatdef">
+        <p class="content">
+          Creating and designing a website is very fun. You get to learn new
+          stuff. Being able to create a website can help in lots of different
+          ways. You don't always have to make only a site. You can create games,
+          art, 3D art, libraries and much more. In the past I was able to create
+          a lot of 2D and 3D games in a website.
+        </p>
+      </div>
+    </div>
+
+    <img src="art.jpg" id="art" />
+
+    <div class="pc">
+      <div id="pros">
+        <h1>What are the Pros:</h1>
+        <p>Make a lot of money.</p>
+        <p>Learn new things every day.</p>
+        <p>You can make your own side projects.</p>
+        <p>Work from home.</p>
+      </div>
+
+      <div id="cons">
+        <h1>What are the Cons:</h1>
+        <p>Stop spending time with your family.</p>
+        <p>Can evolve into bad eye sight.</p>
+        <p>Poor posture.</p>
+        <p>Requires a lot of technology which might be expensive.</p>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
